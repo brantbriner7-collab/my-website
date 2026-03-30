@@ -1,0 +1,513 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+<meta charset="UTF-8"/>\
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>\
+<title>Struggle to Mastery \'97 Brant Briner</title>\
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=Bebas+Neue&family=DM+Mono:wght@300&display=swap" rel="stylesheet"/>\
+<style>\
+* \{ margin:0; padding:0; box-sizing:border-box; \}\
+:root \{\
+  --bg: #0d1a0d;\
+  --gold: #c9a84c;\
+  --gold2: #e8c96a;\
+  --green: #2d5016;\
+  --green2: #4a7c2f;\
+  --fairway: #6aaa3a;\
+  --cream: #f0ead8;\
+  --dim: rgba(240,234,216,0.45);\
+  --red: #c0392b;\
+\}\
+html \{ scroll-snap-type: y mandatory; overflow-y: scroll; \}\
+body \{\
+  background: var(--bg);\
+  font-family: 'Cormorant Garamond', serif;\
+  cursor: none;\
+  overflow-x: hidden;\
+\}\
+#cursor \{\
+  position: fixed; width:18px; height:18px; border-radius:50%;\
+  background: radial-gradient(circle at 35% 30%, #fff 0%, #c8c8c8 60%, #a0a0a0 100%);\
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.4), 0 2px 10px rgba(0,0,0,0.5);\
+  pointer-events:none; z-index:9999; transform:translate(-50%,-50%);\
+  transition: transform 0.08s ease;\
+\}\
+#fairway-progress \{\
+  position:fixed; left:1.5rem; top:50%; transform:translateY(-50%);\
+  display:flex; flex-direction:column; gap:10px; z-index:100;\
+\}\
+.f-dot \{\
+  width:8px; height:8px; border-radius:50%;\
+  border:1.5px solid rgba(201,168,76,0.35);\
+  transition:all 0.4s; cursor:pointer;\
+\}\
+.f-dot.active \{ background:var(--gold); border-color:var(--gold); box-shadow:0 0 12px rgba(201,168,76,0.7); \}\
+.panel \{ height:100vh; width:100vw; scroll-snap-align:start; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; \}\
+\
+/* PANEL 0 \'97 TITLE */\
+#p0 \{ background: radial-gradient(ellipse at 50% 60%, #1a3a1a 0%, #0d1a0d 70%); flex-direction:column; \}\
+.grass-field \{ position:absolute; bottom:0; left:0; right:0; height:35vh; overflow:hidden; \}\
+.blade \{ position:absolute; bottom:0; width:2px; background:linear-gradient(180deg, var(--fairway) 0%, var(--green) 60%, transparent 100%); transform-origin:bottom center; animation:sway var(--dur,3s) ease-in-out infinite alternate; \}\
+@keyframes sway \{ from\{transform:rotate(calc(var(--lean,-3) * 1deg));\} to\{transform:rotate(calc(var(--lean,-3) * -1deg + 6deg));\} \}\
+.title-wrap \{ position:relative; z-index:10; text-align:center; padding-bottom:10vh; \}\
+.title-eye \{ font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.5em; color:var(--gold); text-transform:uppercase; margin-bottom:1.5rem; opacity:0; animation:rise 1s ease 0.3s forwards; \}\
+.title-main \{ font-family:'Bebas Neue',sans-serif; font-size:clamp(5rem,15vw,12rem); line-height:0.9; color:var(--cream); letter-spacing:0.03em; opacity:0; animation:rise 1s ease 0.6s forwards; \}\
+.title-sub \{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,3vw,2rem); font-style:italic; color:var(--gold); margin-top:0.5rem; opacity:0; animation:rise 1s ease 0.9s forwards; \}\
+.title-author \{ font-family:'DM Mono',monospace; font-size:0.6rem; letter-spacing:0.35em; color:var(--dim); margin-top:2rem; text-transform:uppercase; opacity:0; animation:rise 1s ease 1.2s forwards; \}\
+.scroll-hint \{ position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.4rem; opacity:0; animation:rise 1s ease 1.8s forwards; \}\
+.scroll-hint span \{ font-family:'DM Mono',monospace; font-size:0.5rem; letter-spacing:0.3em; color:var(--dim); text-transform:uppercase; \}\
+.scroll-line \{ width:1px; height:40px; background:linear-gradient(180deg,var(--gold),transparent); animation:drip 1.5s ease-in-out infinite; \}\
+@keyframes drip \{ 0%,100%\{transform:scaleY(0.3) translateY(0);opacity:0.3;\} 50%\{transform:scaleY(1) translateY(10px);opacity:1;\} \}\
+\
+/* SHARED */\
+.sec-num \{ font-family:'Bebas Neue',sans-serif; font-size:clamp(8rem,20vw,18rem); line-height:1; color:rgba(201,168,76,0.07); position:absolute; user-select:none; pointer-events:none; \}\
+.sec-label \{ font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.4em; color:var(--gold); text-transform:uppercase; margin-bottom:0.75rem; \}\
+.sec-title \{ font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:300; color:var(--cream); line-height:1.15; \}\
+.sec-title em \{ font-style:italic; color:var(--fairway); \}\
+.sec-point \{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(0.88rem,1.8vw,1.1rem); color:var(--dim); margin-top:1.2rem; max-width:400px; line-height:1.8; border-left:2px solid var(--gold); padding-left:1rem; \}\
+.reveal \{ opacity:0; transform:translateY(40px); transition:opacity 0.9s ease, transform 0.9s ease; \}\
+.reveal.in \{ opacity:1; transform:translateY(0); \}\
+@keyframes rise \{ from\{opacity:0;transform:translateY(24px);\} to\{opacity:1;transform:translateY(0);\} \}\
+\
+/* PANEL 1 \'97 INTRO */\
+#p1 \{ background: radial-gradient(ellipse at 30% 70%, #1e3a10 0%, #0d1a0d 65%); \}\
+.course-svg \{ position:absolute; right:-5vw; top:50%; transform:translateY(-50%); width:55vw; opacity:0.18; \}\
+.p1-content \{ position:relative; z-index:10; margin-right:30vw; \}\
+.flag-scene \{ position:absolute; right:18vw; top:50%; transform:translateY(-60%); z-index:5; \}\
+.flag-pole \{ width:2px; height:120px; background:linear-gradient(180deg,var(--gold) 0%,rgba(201,168,76,0.3) 100%); position:relative; \}\
+.flag-flag \{ position:absolute; top:0; left:2px; width:40px; height:24px; background:var(--gold); clip-path:polygon(0 0,100% 40%,0 80%); animation:wave 2s ease-in-out infinite; transform-origin:left center; \}\
+@keyframes wave \{ 0%,100%\{transform:skewY(-3deg) scaleX(1);\} 50%\{transform:skewY(3deg) scaleX(0.92);\} \}\
+.flag-hole \{ width:18px; height:6px; border-radius:50%; background:rgba(0,0,0,0.6); margin-left:-8px; margin-top:-2px; \}\
+.putt-arc \{ position:absolute; right:22vw; top:62%; width:120px; height:60px; border:1.5px dashed rgba(201,168,76,0.35); border-bottom:none; border-radius:60px 60px 0 0; animation:pulse-arc 2.5s ease-in-out infinite; \}\
+@keyframes pulse-arc \{ 0%,100%\{opacity:0.35;\} 50%\{opacity:0.8;\} \}\
+\
+/* PANEL 2 \'97 EARLY WRITING */\
+#p2 \{ background:#f5f0e8; flex-direction:column; \}\
+.paper-scene \{ position:relative; width:min(400px,80vw); background:#fff; box-shadow:0 20px 80px rgba(0,0,0,0.15); padding:2.5rem 3rem; transform:rotate(-1.5deg); \}\
+.paper-lines \{ display:flex; flex-direction:column; gap:1.1rem; \}\
+.paper-line \{ height:1.5px; background:#e8e0d0; position:relative; overflow:hidden; \}\
+.paper-line::after \{ content:''; position:absolute; left:0; top:0; bottom:0; background:#b0a898; width:var(--fill,30%); animation:lineGrow 1.5s ease var(--delay,0s) both; \}\
+@keyframes lineGrow \{ from\{width:0;\} to\{width:var(--fill,30%);\} \}\
+.paper-grade \{ position:absolute; top:1rem; right:1.2rem; font-family:'Bebas Neue',sans-serif; font-size:3rem; color:var(--red); opacity:0.85; transform:rotate(8deg); \}\
+.paper-check \{ font-size:0.7rem; color:#b0a898; font-family:'DM Mono',monospace; letter-spacing:0.15em; margin-top:1.5rem; font-style:italic; \}\
+.p2-text \{ text-align:center; \}\
+.p2-text .sec-label \{ color:var(--green2); \}\
+.p2-text .sec-title \{ color:var(--bg); \}\
+.p2-text .sec-title em \{ color:var(--green2); \}\
+.p2-text .sec-point \{ color:rgba(13,26,13,0.55); border-color:var(--green2); margin:1rem auto 0; \}\
+\
+/* PANEL 3 \'97 AP LANG (present tense) */\
+#p3 \{ background:#0d1a0d; \}\
+.edit-mark \{ position:absolute; font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--red); font-size:var(--fs,1rem); opacity:0; animation:floatMark var(--dur2,4s) ease var(--d2,0s) infinite; white-space:nowrap; pointer-events:none; \}\
+@keyframes floatMark \{ 0%\{opacity:0;transform:translateY(0) rotate(var(--rot,-3deg));\} 20%\{opacity:0.75;\} 80%\{opacity:0.55;\} 100%\{opacity:0;transform:translateY(-30px) rotate(var(--rot,-3deg));\} \}\
+.p3-content \{ position:relative; z-index:10; display:flex; align-items:center; gap:5vw; flex-wrap:wrap; justify-content:center; \}\
+.lens-icon \{ width:clamp(100px,16vw,180px); height:clamp(100px,16vw,180px); flex-shrink:0; \}\
+\
+/* PANEL 4 \'97 GOLF ESSAY */\
+#p4 \{ background: radial-gradient(ellipse at 60% 40%, #1e3d0e 0%, #0d1a0d 70%); \}\
+.draft-stack \{ position:absolute; right:10vw; top:50%; transform:translateY(-50%); width:clamp(130px,18vw,190px); height:200px; \}\
+.draft-page \{ position:absolute; width:100%; background:rgba(245,240,232,0.92); padding:1rem 1.2rem; box-shadow:0 4px 20px rgba(0,0,0,0.4); \}\
+.draft-page:nth-child(1)\{transform:rotate(-4deg);opacity:0.3;top:-30px;\}\
+.draft-page:nth-child(2)\{transform:rotate(-2deg);opacity:0.55;top:-15px;\}\
+.draft-page:nth-child(3)\{transform:rotate(0deg);opacity:1;top:0;\}\
+.draft-title \{ font-family:'DM Mono',monospace; font-size:0.55rem; color:#1a1a1a; border-bottom:1px solid #ccc; padding-bottom:0.3rem; margin-bottom:0.5rem; letter-spacing:0.05em; \}\
+.draft-lines div \{ height:1px; background:#ddd; margin-bottom:0.45rem; \}\
+.draft-lines div:nth-child(odd)\{width:90%;\} .draft-lines div:nth-child(even)\{width:65%;\}\
+.draft-label \{ position:absolute; bottom:-1.5rem; left:50%; transform:translateX(-50%); font-family:'DM Mono',monospace; font-size:0.45rem; color:var(--gold); letter-spacing:0.2em; white-space:nowrap; \}\
+.trajectory \{ position:absolute; left:5vw; bottom:20%; width:45vw; height:160px; overflow:visible; pointer-events:none; \}\
+.p4-content \{ position:relative; z-index:10; max-width:400px; margin-right:25vw; \}\
+\
+/* PANEL 5 \'97 AI / STRUGGLE */\
+#p5 \{ background:#0a0a0a; \}\
+.ai-scene \{ position:absolute; inset:0; overflow:hidden; \}\
+.ai-line \{ position:absolute; font-family:'DM Mono',monospace; font-size:var(--afs,0.65rem); color:rgba(74,124,47,0.25); white-space:nowrap; animation:scrollLine var(--as,8s) linear var(--ad,0s) infinite; \}\
+@keyframes scrollLine \{ from\{transform:translateX(110vw);\} to\{transform:translateX(-110vw);\} \}\
+.p5-content \{ position:relative; z-index:10; max-width:460px; text-align:center; \}\
+.p5-content .sec-point \{ margin:1rem auto 0; text-align:left; \}\
+.ai-vs \{ display:flex; gap:2rem; margin-top:1.5rem; justify-content:center; flex-wrap:wrap; \}\
+.ai-card \{ padding:0.8rem 1.2rem; border:1px solid; font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.1em; text-transform:uppercase; max-width:160px; text-align:left; line-height:1.8; \}\
+.ai-card.bad \{ border-color:var(--red); color:var(--red); \}\
+.ai-card.good \{ border-color:var(--fairway); color:var(--fairway); \}\
+.ai-card-label \{ font-size:0.5rem; opacity:0.6; margin-bottom:0.4rem; display:block; \}\
+\
+/* PANEL 6 \'97 ESD COMMUNITY */\
+#p6 \{ background:#0d1a0d; \}\
+.network-scene \{ position:absolute; inset:0; overflow:hidden; \}\
+.node \{ position:absolute; border-radius:50%; border:1.5px solid; display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:0.45rem; letter-spacing:0.1em; text-transform:uppercase; animation:pulse-node 3s ease-in-out infinite; \}\
+@keyframes pulse-node \{ 0%,100%\{box-shadow:0 0 0 0 currentColor;\} 50%\{box-shadow:0 0 18px 3px currentColor;opacity:0.8;\} \}\
+.network-svg \{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; \}\
+.p6-content \{ position:relative; z-index:10; max-width:400px; \}\
+\
+/* PANEL 7 \'97 ESSAY FULL TEXT */\
+#p7 \{\
+  background: linear-gradient(160deg, #0d1a0d 0%, #111 100%);\
+  align-items:flex-start;\
+  justify-content:center;\
+  overflow-y:auto;\
+  scroll-snap-align:start;\
+  height:100vh;\
+\}\
+.essay-wrap \{\
+  position:relative;\
+  z-index:10;\
+  max-width:680px;\
+  width:90vw;\
+  margin:0 auto;\
+  padding:5rem 0 6rem;\
+\}\
+.essay-eyebrow \{\
+  font-family:'DM Mono',monospace;\
+  font-size:0.55rem;\
+  letter-spacing:0.4em;\
+  color:var(--gold);\
+  text-transform:uppercase;\
+  margin-bottom:1.5rem;\
+\}\
+.essay-title \{\
+  font-family:'Cormorant Garamond',serif;\
+  font-size:clamp(1.8rem,4vw,2.8rem);\
+  font-weight:600;\
+  color:var(--cream);\
+  line-height:1.2;\
+  margin-bottom:2rem;\
+  border-bottom:1px solid rgba(201,168,76,0.2);\
+  padding-bottom:1.5rem;\
+\}\
+.essay-body \{\
+  font-family:'Cormorant Garamond',serif;\
+  font-size:clamp(1rem,1.8vw,1.15rem);\
+  color:rgba(240,234,216,0.82);\
+  line-height:1.95;\
+  display:flex;\
+  flex-direction:column;\
+  gap:1.4rem;\
+\}\
+.essay-body p \{ \}\
+.essay-body p.drop::first-letter \{\
+  font-family:'Bebas Neue',sans-serif;\
+  font-size:3.8rem;\
+  line-height:0.8;\
+  float:left;\
+  margin-right:0.08em;\
+  margin-top:0.05em;\
+  color:var(--gold);\
+\}\
+.essay-footer \{\
+  margin-top:3rem;\
+  padding-top:1.5rem;\
+  border-top:1px solid rgba(201,168,76,0.15);\
+  font-family:'DM Mono',monospace;\
+  font-size:0.55rem;\
+  letter-spacing:0.25em;\
+  color:var(--dim);\
+  text-transform:uppercase;\
+\}\
+\
+/* PANEL 8 \'97 CONCLUSION */\
+#p8 \{ background: radial-gradient(ellipse at 50% 50%, #1a3010 0%, #0d1a0d 70%); flex-direction:column; \}\
+.circle-scene \{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; \}\
+.ring \{ position:absolute; border-radius:50%; border:1px solid rgba(201,168,76,0.12); animation:expand-ring var(--rd,6s) ease-in-out infinite; \}\
+@keyframes expand-ring \{ 0%,100%\{transform:scale(0.95);opacity:0.4;\} 50%\{transform:scale(1.05);opacity:0.12;\} \}\
+.p8-center \{ position:relative; z-index:10; text-align:center; display:flex; flex-direction:column; align-items:center; \}\
+.trophy-glyph \{ font-size:clamp(4rem,10vw,7rem); margin-bottom:1.5rem; animation:glow-trophy 3s ease-in-out infinite; \}\
+@keyframes glow-trophy \{ 0%,100%\{filter:drop-shadow(0 0 20px rgba(201,168,76,0.4));\} 50%\{filter:drop-shadow(0 0 50px rgba(201,168,76,0.9));\} \}\
+.p8-quote \{ font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,3vw,2rem); font-style:italic; color:var(--cream); max-width:520px; line-height:1.65; \}\
+.p8-attr \{ font-family:'DM Mono',monospace; font-size:0.55rem; letter-spacing:0.35em; color:var(--gold); margin-top:1.5rem; text-transform:uppercase; \}\
+\
+::-webkit-scrollbar\{width:3px;\} ::-webkit-scrollbar-track\{background:var(--bg);\} ::-webkit-scrollbar-thumb\{background:var(--gold);\}\
+</style>\
+</head>\
+<body>\
+\
+<div id="cursor"></div>\
+\
+<div id="fairway-progress">\
+  <div class="f-dot active" data-i="0"></div>\
+  <div class="f-dot" data-i="1"></div>\
+  <div class="f-dot" data-i="2"></div>\
+  <div class="f-dot" data-i="3"></div>\
+  <div class="f-dot" data-i="4"></div>\
+  <div class="f-dot" data-i="5"></div>\
+  <div class="f-dot" data-i="6"></div>\
+  <div class="f-dot" data-i="7"></div>\
+</div>\
+\
+<!-- 0 TITLE -->\
+<section class="panel" id="p0">\
+  <div class="grass-field" id="grassField"></div>\
+  <div class="title-wrap">\
+    <div class="title-eye">Brant Briner &nbsp;\'b7&nbsp; ESD &nbsp;\'b7&nbsp; AP Lang 2026</div>\
+    <div class="title-main">STRUGGLE<br/>TO<br/>MASTERY</div>\
+    <div class="title-sub">The friction that builds everything</div>\
+    <div class="title-author">\uc0\u9971  Golf &nbsp;\'b7&nbsp; \u9999 \u65039  Writing &nbsp;\'b7&nbsp; \u55356 \u57323  ESD &nbsp;\'b7&nbsp; \u55358 \u56653  Lacrosse</div>\
+  </div>\
+  <div class="scroll-hint">\
+    <span>Begin the round</span>\
+    <div class="scroll-line"></div>\
+  </div>\
+</section>\
+\
+<!-- 1 INTRO -->\
+<section class="panel" id="p1">\
+  <svg class="course-svg" viewBox="0 0 400 500" fill="none">\
+    <ellipse cx="200" cy="300" rx="90" ry="180" fill="#2d5016" opacity="0.6"/>\
+    <ellipse cx="200" cy="300" rx="130" ry="220" fill="#1a3a0a" opacity="0.4"/>\
+    <rect x="170" y="440" width="60" height="40" rx="4" fill="#3a6020" opacity="0.8"/>\
+    <ellipse cx="200" cy="110" rx="55" ry="45" fill="#4a8a28" opacity="0.9"/>\
+    <line x1="200" y1="110" x2="200" y2="70" stroke="#c9a84c" stroke-width="2"/>\
+    <polygon points="200,70 230,82 200,94" fill="#c9a84c"/>\
+    <circle cx="200" cy="112" r="4" fill="#0d1a0d"/>\
+    <ellipse cx="140" cy="200" rx="25" ry="15" fill="#c9a84c" opacity="0.3"/>\
+    <ellipse cx="260" cy="160" rx="20" ry="12" fill="#c9a84c" opacity="0.3"/>\
+    <path d="M200 460 Q280 200 200 115" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.5"/>\
+    <circle cx="200" cy="460" r="8" fill="white" opacity="0.9"/>\
+  </svg>\
+  <div class="flag-scene">\
+    <div class="flag-pole"><div class="flag-flag"></div></div>\
+    <div class="flag-hole"></div>\
+  </div>\
+  <div class="putt-arc"></div>\
+  <div class="p1-content reveal">\
+    <div class="sec-num" style="top:-2rem;left:-3rem;">I</div>\
+    <div class="sec-label">Hole I \'b7 Introduction</div>\
+    <div class="sec-title">The Putt<br/><em>I Almost Quit On</em></div>\
+    <div class="sec-point">Three feet out. Dead straight. Yanked it left.<br/>That moment \'97 fail, adjust, go again \'97 is everything.</div>\
+  </div>\
+</section>\
+\
+<!-- 2 EARLY WRITING -->\
+<section class="panel" id="p2">\
+  <div class="sec-num" style="bottom:-1rem;right:0;">II</div>\
+  <div style="display:flex;flex-direction:column;align-items:center;gap:2rem;">\
+    <div class="paper-scene reveal">\
+      <div class="paper-grade">B+</div>\
+      <div class="paper-lines">\
+        <div class="paper-line" style="--fill:28%;--delay:0.1s"></div>\
+        <div class="paper-line" style="--fill:22%;--delay:0.2s"></div>\
+        <div class="paper-line" style="--fill:31%;--delay:0.3s"></div>\
+        <div class="paper-line" style="--fill:19%;--delay:0.4s"></div>\
+        <div class="paper-line" style="--fill:25%;--delay:0.5s"></div>\
+        <div class="paper-line" style="--fill:20%;--delay:0.6s"></div>\
+        <div class="paper-line" style="--fill:26%;--delay:0.7s"></div>\
+        <div class="paper-line" style="--fill:18%;--delay:0.8s"></div>\
+      </div>\
+      <div class="paper-check">going through the motions...</div>\
+    </div>\
+    <div class="p2-text reveal">\
+      <div class="sec-label">Hole II \'b7 Freshman Year</div>\
+      <div class="sec-title">Comfortable<br/><em>is Another Word for Stuck</em></div>\
+      <div class="sec-point">Checked the boxes. Got the grade. Felt done.<br/>Nothing pushed back. Nothing grew.</div>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- 3 AP LANG (NOW, present tense) -->\
+<section class="panel" id="p3">\
+  <div id="editScene"></div>\
+  <div class="p3-content reveal">\
+    <svg class="lens-icon" viewBox="0 0 200 200" fill="none">\
+      <path d="M10 100 Q100 20 190 100 Q100 180 10 100Z" stroke="#c9a84c" stroke-width="2" fill="none"/>\
+      <circle cx="100" cy="100" r="38" stroke="#4a7c2f" stroke-width="2" fill="rgba(74,124,47,0.1)"/>\
+      <circle cx="100" cy="100" r="18" fill="#c9a84c" opacity="0.9"/>\
+      <circle cx="108" cy="92" r="5" fill="white" opacity="0.6"/>\
+      <line x1="10" y1="100" x2="62" y2="100" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>\
+      <line x1="138" y1="100" x2="190" y2="100" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.5"/>\
+    </svg>\
+    <div>\
+      <div class="sec-label">Hole III \'b7 AP Lang \'97 Right Now</div>\
+      <div class="sec-title">Learning to<br/><em>Discern</em></div>\
+      <div class="sec-point">Not just what an author says. Why they said it.<br/>Sitting in the confusion until something clicks.<br/>That is discernment \'97 built in real time.</div>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- 4 GOLF ESSAY -->\
+<section class="panel" id="p4">\
+  <div class="draft-stack">\
+    <div class="draft-page">\
+      <div class="draft-title">Draft 1 \'97 Good</div>\
+      <div class="draft-lines"><div></div><div></div><div></div><div></div></div>\
+    </div>\
+    <div class="draft-page">\
+      <div class="draft-title">Revised \'97 Better</div>\
+      <div class="draft-lines"><div></div><div></div><div></div><div></div></div>\
+    </div>\
+    <div class="draft-page">\
+      <div class="draft-title">Final \'97 Mine \uc0\u10003 </div>\
+      <div class="draft-lines"><div></div><div></div><div></div><div></div></div>\
+      <div class="draft-label">Anthropocene Golf Essay</div>\
+    </div>\
+  </div>\
+  <svg class="trajectory" viewBox="0 0 400 150" overflow="visible">\
+    <defs>\
+      <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">\
+        <polygon points="0 0,6 3,0 6" fill="rgba(201,168,76,0.6)"/>\
+      </marker>\
+    </defs>\
+    <path d="M30 140 Q200 -20 370 130" stroke="rgba(201,168,76,0.4)" stroke-width="1.5" stroke-dasharray="8 5" fill="none" marker-end="url(#arr)"/>\
+    <circle cx="30" cy="140" r="10" fill="white" opacity="0.9"/>\
+    <circle cx="370" cy="130" r="10" fill="white" opacity="0.9">\
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="2s" repeatCount="indefinite"/>\
+    </circle>\
+  </svg>\
+  <div class="p4-content reveal">\
+    <div class="sec-num" style="top:-3rem;left:-2rem;">IV</div>\
+    <div class="sec-label">Hole IV \'b7 The Anthropocene Essay</div>\
+    <div class="sec-title">Struggle<br/><em>as the Point</em></div>\
+    <div class="sec-point">"Golf mirrors me. It shows me things I don't always want to see."<br/>Four years of growth on one page.</div>\
+  </div>\
+</section>\
+\
+<!-- 5 AI / PRODUCTIVE STRUGGLE -->\
+<section class="panel" id="p5">\
+  <div class="ai-scene" id="aiScene"></div>\
+  <div class="p5-content reveal">\
+    <div class="sec-label">Hole V \'b7 The AI Question</div>\
+    <div class="sec-title">Friction is<br/><em>the Feature</em></div>\
+    <div class="sec-point">AI can help you start. It cannot build your judgment.<br/>Discernment only comes from doing the hard version yourself.</div>\
+    <div class="ai-vs">\
+      <div class="ai-card bad">\
+        <span class="ai-card-label">Skip the struggle</span>\
+        Clean output<br/>No judgment<br/>Nothing learned<br/>Stays surface\
+      </div>\
+      <div class="ai-card good">\
+        <span class="ai-card-label">Do the work</span>\
+        Rough draft<br/>Real feedback<br/>Actual growth<br/>Your voice\
+      </div>\
+    </div>\
+  </div>\
+</section>\
+\
+<!-- 6 ESD COMMUNITY -->\
+<section class="panel" id="p6">\
+  <div class="network-scene">\
+    <svg class="network-svg" id="netSvg"></svg>\
+    <div class="node" id="nMe" style="width:72px;height:72px;left:50%;top:50%;transform:translate(-50%,-50%);border-color:var(--gold);color:var(--gold);">BRANT</div>\
+    <div class="node" style="width:50px;height:50px;left:25%;top:28%;border-color:var(--fairway);color:var(--fairway);">ESD</div>\
+    <div class="node" style="width:44px;height:44px;left:68%;top:22%;border-color:#8fb3ff;color:#8fb3ff;">LAX</div>\
+    <div class="node" style="width:46px;height:46px;left:72%;top:62%;border-color:var(--gold);color:var(--gold);">GOLF</div>\
+    <div class="node" style="width:42px;height:42px;left:20%;top:65%;border-color:#e07a5f;color:#e07a5f;">WRITE</div>\
+    <div class="node" style="width:40px;height:40px;left:38%;top:18%;border-color:var(--fairway);color:var(--fairway);">AP LANG</div>\
+    <div class="node" style="width:38px;height:38px;left:60%;top:76%;border-color:var(--gold2);color:var(--gold2);">LEAD</div>\
+  </div>\
+  <div class="p6-content reveal">\
+    <div class="sec-label">Hole VI \'b7 ESD</div>\
+    <div class="sec-title">Thriving Through<br/><em>Perseverance</em></div>\
+    <div class="sec-point">High expectations. No coasting.<br/>AP load, lacrosse, senior year \'97 all of it at once.<br/>Thriving is not a perfect record. Its the willingness to line up again.</div>\
+  </div>\
+</section>\
+\
+<!-- 7 FULL ESSAY -->\
+<section class="panel" id="p7">\
+  <div class="essay-wrap reveal">\
+    <div class="essay-eyebrow">Written Component \'b7 AP Lang \'b7 ESD \'b7 2026</div>\
+    <div class="essay-title">Productive Struggle: What a Missed Putt Taught Me About Writing</div>\
+    <div class="essay-body">\
+      <p class="drop">There is a specific feeling you get when you miss a putt you really should have made. Three feet out, dead straight, and somehow you yank it left. You can stand there and replay it in your head, or you can reset your stance and go again. I have been on both sides of that. On the golf course and at a desk. And the only version of me that actually got better is the one that lined back up.</p>\
+\
+      <p>Freshman year my writing was fine. Organized, had a thesis, checked the boxes. I would turn something in and feel done with it, like the assignment was just something to get off my plate. Nothing pushed back hard enough to make me think differently about what I was actually saying. I got decent grades and figured that meant I was doing alright. Looking back I think I was just comfortable, and comfortable is another word for stuck.</p>\
+\
+      <p>The thing about ESD is it does not let you stay there. Sophomore and junior year the assignments started demanding more. A real argument, not just a summary with an opinion at the end. I started getting papers back with actual comments on them, not just a grade but real feedback pointing at real problems. It stung sometimes. But I started reading the comments instead of just flipping to the grade and moving on. That was the first real shift, being open to the idea that the paper I thought was solid actually was not. Openness is not something you just naturally have. For me it got built through a lot of marked up drafts I did not want to look at.</p>\
+\
+      <p>Now I am in AP Lang and its honestly the most my writing has ever been pushed. Rhetorical analysis makes you slow down in a way that is genuinely uncomfortable. You cannot just say what an author is doing, you have to figure out why they did it, what effect it creates, what they were trying to make you feel. There are moments in this class where I honestly do not know what I am doing and I just have to sit with that until something clicks. That is discernment to me. Not having the answer right away but being willing to stay in the confusion long enough to find something real instead of grabbing whatever sounds decent first.</p>\
+\
+      <p>The clearest proof I have of all of this is the essay I wrote about golf. I wrote about anger and frustration and the way the game humbles you no matter how much you practice. About the 17th hole with my dad where I hit a perfect shot and watched it splash into the pond anyway. About how golf does not care about cause and effect the way school does. I wrote that golf mirrors me, it shows me things I don't always want to see, and I meant every word of it. That essay did not come from nowhere. It came from four years of being pushed, marked up, and forced to keep going until the voice on the page actually sounded like mine. You can see the difference between what I was doing freshman year and what I was able to do by the time I wrote that piece. That gap is what productive struggle looks like.</p>\
+\
+      <p>And that is the thing that gets lost when people skip the struggle, including reaching for AI to just do the work. I get it. AI is useful. It can help you brainstorm, give you a starting point, clean up a structure. But if you use it to hand you the finished product, you are robbing yourself of the only process that actually builds judgment. Discernment cannot be downloaded. You build it by writing the bad version yourself, sitting with the feedback, and doing it again. A clean AI draft with no friction in it teaches you nothing about your own thinking. A rough grade on something you genuinely fought through tells you exactly where to look next time.</p>\
+\
+      <p>Perseverance at ESD is not just grinding. It is staying open when something is hard instead of finding a way around it. Balancing a full AP load with lacrosse and everything that comes with senior year, there are weeks where I am not at my best and I know it. But I still show up and do the work myself. Because that is the point. Thriving here does not look like a perfect record. It looks like the willingness to line back up after the miss, stay open to being wrong, and trust that the struggle is building something real even when it does not feel like it.</p>\
+\
+      <p>Golf taught me that first. Four years of writing confirmed it.</p>\
+    </div>\
+    <div class="essay-footer">Brant Briner &nbsp;\'b7&nbsp; The Episcopal School of Dallas &nbsp;\'b7&nbsp; AP English Language &nbsp;\'b7&nbsp; Spring 2026</div>\
+  </div>\
+</section>\
+\
+<!-- 8 CONCLUSION -->\
+<section class="panel" id="p8">\
+  <div class="circle-scene">\
+    <div class="ring" style="width:80vmin;height:80vmin;--rd:7s;"></div>\
+    <div class="ring" style="width:60vmin;height:60vmin;--rd:5s;"></div>\
+    <div class="ring" style="width:40vmin;height:40vmin;--rd:4s;"></div>\
+    <div class="ring" style="width:20vmin;height:20vmin;--rd:3s;"></div>\
+  </div>\
+  <div class="p8-center reveal">\
+    <div class="trophy-glyph">\uc0\u9971 </div>\
+    <div class="p8-quote">"Not a perfect record.<br/>But the instinct to line up again."</div>\
+    <div class="p8-attr">Brant Briner &nbsp;\'b7&nbsp; ESD &nbsp;\'b7&nbsp; 2026</div>\
+  </div>\
+</section>\
+\
+<script>\
+// Cursor\
+const cur = document.getElementById('cursor');\
+document.addEventListener('mousemove', e => \{ cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px'; \});\
+\
+// Grass blades\
+const gf = document.getElementById('grassField');\
+for(let i=0;i<90;i++)\{\
+  const b=document.createElement('div'); b.className='blade';\
+  b.style.cssText=`left:$\{Math.random()*100\}%;height:$\{40+Math.random()*80\}px;--dur:$\{2+Math.random()*2\}s;--lean:$\{-4+Math.random()*8\};animation-delay:$\{Math.random()*2\}s;opacity:$\{0.3+Math.random()*0.5\};`;\
+  gf.appendChild(b);\
+\}\
+\
+// Edit marks\
+const marks=['awkward','?','develop this','why?','great insight','too vague','strong voice','revise','what effect?','see me','\uc0\u10003 ','dig deeper','word choice','purpose?','show dont tell'];\
+const es=document.getElementById('editScene');\
+marks.forEach(m=>\{\
+  const el=document.createElement('div'); el.className='edit-mark'; el.textContent=m;\
+  el.style.cssText=`left:$\{5+Math.random()*85\}%;top:$\{5+Math.random()*85\}%;--fs:$\{0.7+Math.random()*0.8\}rem;--dur2:$\{3+Math.random()*4\}s;--d2:$\{Math.random()*5\}s;--rot:$\{-8+Math.random()*16\}deg;`;\
+  es.appendChild(el);\
+\});\
+\
+// AI scrolling code lines\
+const aiLines = ['function think() \{ return shortcut; \}','// TODO: do the actual work','const judgment = earned, not downloaded;','while(struggling) \{ grow(); \}','import \{ voice \} from "./four-years-of-work";','// AI can start it. Only you can finish it.','const grade = effort * openness;','discernment.build(feedback, revision, time);'];\
+const as = document.getElementById('aiScene');\
+aiLines.forEach((line, i) => \{\
+  const el = document.createElement('div'); el.className='ai-line'; el.textContent=line;\
+  el.style.cssText=`top:$\{8+i*11\}%;--afs:$\{0.55+Math.random()*0.2\}rem;--as:$\{10+Math.random()*8\}s;--ad:$\{Math.random()*6\}s;`;\
+  as.appendChild(el);\
+\});\
+\
+// Network lines\
+function drawNet()\{\
+  const svg=document.getElementById('netSvg');\
+  const center=document.getElementById('nMe');\
+  const nodes=document.querySelectorAll('.node:not(#nMe)');\
+  const sr=svg.getBoundingClientRect(); svg.innerHTML='';\
+  const cr=center.getBoundingClientRect();\
+  const cx=cr.left+cr.width/2-sr.left, cy=cr.top+cr.height/2-sr.top;\
+  nodes.forEach(n=>\{\
+    const r=n.getBoundingClientRect();\
+    const nx=r.left+r.width/2-sr.left, ny=r.top+r.height/2-sr.top;\
+    const ln=document.createElementNS('http://www.w3.org/2000/svg','line');\
+    ln.setAttribute('x1',cx);ln.setAttribute('y1',cy);ln.setAttribute('x2',nx);ln.setAttribute('y2',ny);\
+    ln.setAttribute('stroke','rgba(201,168,76,0.18)');ln.setAttribute('stroke-width','1');ln.setAttribute('stroke-dasharray','4 4');\
+    svg.appendChild(ln);\
+  \});\
+\}\
+setTimeout(drawNet,300); window.addEventListener('resize',drawNet);\
+\
+// Scroll observer\
+const panels=document.querySelectorAll('.panel');\
+const dots=document.querySelectorAll('.f-dot');\
+const observer=new IntersectionObserver(entries=>\{\
+  entries.forEach(e=>\{\
+    if(!e.isIntersecting) return;\
+    const idx=Array.from(panels).indexOf(e.target);\
+    dots.forEach((d,i)=>d.classList.toggle('active',i===idx));\
+    e.target.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));\
+  \});\
+\},\{threshold:0.4\});\
+panels.forEach(p=>observer.observe(p));\
+dots.forEach((d,i)=>d.addEventListener('click',()=>panels[i].scrollIntoView(\{behavior:'smooth'\})));\
+</script>\
+</body>\
+</html>}
